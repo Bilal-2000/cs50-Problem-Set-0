@@ -5,17 +5,11 @@ emoji = {
 
 
 def convert(str):
-    temp = ""
-    for index in range(len(str)):
-        if ":)" in str:
-            temp = temp + str.replace(":)", emoji.get(":)"))
-            break
-        elif ":(" in str:
-            temp = temp + str.replace(":(", emoji.get(":("))
-            break
-        else:
-            temp += str
-    return temp
+    if ":)" in str:
+        str = str.replace(":)", emoji.get(":)"))
+    elif ":(" in str:
+        str = str.replace(":(", emoji.get(":("))
+    return str
 
 
 def main():
